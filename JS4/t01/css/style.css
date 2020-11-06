@@ -1,0 +1,127 @@
+.wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+}
+h1 {
+    text-align: center;
+}
+.btnSelectPage {
+    border: none;
+    outline: none;
+    width: 100px;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    background-color: deepskyblue;
+}
+
+.active {
+    background-color: blue;
+}
+.mainWrapper {
+    background-color: gainsboro;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+.leftSide {
+    flex-basis: 30%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.leftSide:after {
+    content: '';
+    display: block;
+    height: calc(100% - 20px);
+    border-left: 2px solid white;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+}
+.itemMovie {
+    width: 100%;
+    padding: 20px 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+
+}
+
+.itemMovie:before {
+    content: '';
+    display: block;
+    height: 100%;
+    border-left: 5px solid blue;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    opacity: 0;
+    transition: all 0.5s ease-in;
+}
+.itemMovie:hover:before{
+    opacity: 1;
+}
+.rightSide {
+    flex-basis: 70%;
+    display: flex;
+    flex-wrap: nowrap;
+    padding-left: 15px;
+}
+.mainInformation{
+    flex-basis: 60%;
+}
+.addFavoriteWrapper{
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+.addFavoriteWrapper span {
+    font-size: 2rem;
+    color: grey;
+}
+.activeFavorite {
+    color: red;
+}
+.nameMovieWrapper span{
+    font-size: 2.5rem;
+    font-weight: bold;
+    height: 100%;
+}
+.dateMovieWrapper span{
+    font-size:0.9rem;
+
+}
+.actorsWrapper {
+    padding-top: 15px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.mainActor {
+    display: flex;
+    flex-direction: column;
+    background-color: deepskyblue;
+    padding: 5px;
+    border-radius: 5px;
+}
+.aboutMovie{
+    padding-top: 15px;
+}
+.posterOfFilm {
+    flex-basis: 40%;
+    max-height: 300px;
+    padding: 10px;
+
+}
+.posterOfFilm img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0 5px 5px 0;
+}
