@@ -45,7 +45,7 @@ h1 {
 .itemMovie {
     width: 100%;
     padding: 20px 0;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
     position: relative;
     display: flex;
@@ -82,9 +82,14 @@ h1 {
     justify-content: flex-end;
     padding: 10px;
 }
-.addFavoriteWrapper span {
+.favoriteIcon {
     font-size: 2rem;
     color: grey;
+    transition: color 0.3s ease-in;
+    cursor: pointer;
+}
+.favoriteIcon:hover {
+    color: red;
 }
 .activeFavorite {
     color: red;
