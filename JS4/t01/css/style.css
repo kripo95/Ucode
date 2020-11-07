@@ -54,7 +54,7 @@ h1 {
 
 }
 
-.itemMovie:before {
+.itemMovieChoose:before {
     content: '';
     display: block;
     height: 100%;
@@ -62,12 +62,9 @@ h1 {
     position: absolute;
     top: 0;
     left: 10px;
-    opacity: 0;
-    transition: all 0.5s ease-in;
-}
-.itemMovie:hover:before{
     opacity: 1;
 }
+
 .rightSide {
     flex-basis: 70%;
     display: flex;
@@ -76,6 +73,7 @@ h1 {
 }
 .mainInformation{
     flex-basis: 60%;
+    padding-bottom: 50px;
 }
 .addFavoriteWrapper{
     display: flex;
@@ -88,9 +86,7 @@ h1 {
     transition: color 0.3s ease-in;
     cursor: pointer;
 }
-.favoriteIcon:hover {
-    color: red;
-}
+
 .activeFavorite {
     color: red;
 }

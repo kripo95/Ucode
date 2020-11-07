@@ -31,34 +31,76 @@ allMovie.add(new Movie('Harry Potter', 'July 7, 2011', '"assets/images/Harry.jpg
 
 function renderLeftSite(movies){
     let leftSide = document.getElementById('leftSide');
+    leftSide.innerHTML = '';
     for (let item of movies){
         let itemMovie = document.createElement('div');
         itemMovie.classList.add('itemMovie');
         itemMovie.innerHTML = `<span>${item.title}</span>`
         leftSide.append(itemMovie);
     }
+    let chooseFilm = document.getElementsByClassName('itemMovie');
+    for(let film of chooseFilm){
+        film.addEventListener('click', function (){
+            for(let item of chooseFilm){
+                item.classList.remove('itemMovieChoose')
+            }
+            film.classList.add('itemMovieChoose');
+            movies.forEach(function (item){
+                if(item.title === film.textContent){
+                    let rightSide = document.getElementById('rightSide');
+                    rightSide.innerHTML = '';
+                    let itemMovie = document.createElement('div');
+                    itemMovie.classList.add('mainInformation');
+                    itemMovie.innerHTML = `<div class="addFavoriteWrapper"><span id="like" class="favoriteIcon ${item.favorite === true ? "activeFavorite" : ''}">&#9829;</span></div>
+                        <div class="nameMovieWrapper"><span>${item.title}</span></div>
+                        <div class="dateMovieWrapper"><span>${item.date}</span></div>
+                        <div class="actorsWrapper">
+                        ${item.actors.map(function (item){
+                                return `<div class="mainActor">
+                            <span>${item.slice(0, item.indexOf(' '))}</span><span>${item.slice(item.indexOf(' ') + 1)}</span>
+                                </div> `
+                                    }).join(' ')}
+                            </div>
+                        <div class="aboutMovie"><span>${item.information}</span></div>
+                        </div>`
+                    rightSide.prepend(itemMovie);
+                    let filmPoster = document.createElement('div');
+                    filmPoster.classList.add('posterOfFilm');
+                    filmPoster.innerHTML = `<img src=${item.image}>`;
+                    rightSide.append(filmPoster);
+                    let addFavorite = document.getElementById('like');
+                    addFavorite.addEventListener('click', function (){
+                        item.favorite === false ? item.addToFavorite() : item.removeToFavorite();
+                        item.favorite === false ? addFavorite.classList.remove('activeFavorite') : addFavorite.classList.add('activeFavorite');
+                    })
+                }
+            })
+
+        })
+    }
+
 }
-// function renderRightSite(movies){
-//
-//     let rightSide = document.getElementById('rightSide');
-//     for (let item of movies){
-//         let itemMovie = document.createElement('div');
-//         itemMovie.classList.add('mainInformation');
-//         itemMovie.innerHTML = `<div class="addFavoriteWrapper"><span class="favoriteIcon">&#9829;</span></div>
-//                 <div class="nameMovieWrapper"><span>${item.title}</span></div>
-//                 <div class="dateMovieWrapper"><span>${item.date}</span></div>
-//                 <div class="actorsWrapper">
-//                     ${item.actors.map(function (item){
-//             return `<div class="mainActor">
-//         <span>${item.slice(0, item.indexOf(' '))}</span><span>${item.slice(item.indexOf(' ') + 1)}</span>
-//     </div> `
-//         })}
-//                 </div>
-//                 <div class="aboutMovie"><span>${item.information}</span></div>
-//             </div>`
-//         rightSide.append(itemMovie);
-//     }
-// }
-renderLeftSite(allMovie);
-let
-// renderRightSite(allMovie);
+
+
+ renderLeftSite(allMovie);
+let btnAll = document.getElementById('btnAll');
+let btnFavorite = document.getElementById('btnFavorite');
+btnAll.addEventListener('click', function (){
+    btnAll.classList.add('active');
+    btnFavorite.classList.remove('active');
+    renderLeftSite(allMovie);
+})
+btnFavorite.addEventListener('click', function (){
+    btnFavorite.classList.add('active');
+    btnAll.classList.remove('active');
+    let favoriteMovie = new Set;
+    for(let movie of allMovie){
+        if(movie.favorite === true){
+            favoriteMovie.add(movie);
+        }
+    }
+    renderLeftSite(favoriteMovie);
+})
+
+
+
