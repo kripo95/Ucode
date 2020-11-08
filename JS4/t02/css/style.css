@@ -1,0 +1,96 @@
+.mainContain {
+    margin: auto;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(blue, yellow);
+}
+.createHuman {
+    padding: 20px;
+    transition: background-color 1s;
+}
+.createHuman:hover {
+    background-color: green;
+}
+.imageContain{
+    margin-top: 20px;
+    border: 5px solid red;
+    position: relative;
+}
+.iMsleep:after {
+    content: 'I`m sleeping';
+    position: absolute;
+    top: 100px;
+    right: 185px;
+    color: red;
+    text-shadow: #111111 1px 1px 1px;
+    font-size: 1.3rem;
+}
+.imWakeUp:after {
+    content: 'I`m wake up';
+    position: absolute;
+    top: 100px;
+    right: 185px;
+    color: red;
+    text-shadow: #111111 1px 1px 1px;
+    font-size: 1.3rem;
+}
+.imEat:after {
+    content: 'Nom nom nom';
+    position: absolute;
+    top: 100px;
+    right: 175px;
+    color: red;
+    text-shadow: #111111 1px 1px 1px;
+    font-size: 1.3rem;
+}
+.imNotHungry:after {
+    content: 'I`m not hungry';
+    position: absolute;
+    top: 100px;
+    right: 175px;
+    color: red;
+    text-shadow: #111111 1px 1px 1px;
+    font-size: 1.3rem;
+}
+.imStillHungry:after{
+    content: 'I`m still hungry';
+    position: absolute;
+    top: 100px;
+    right: 175px;
+    color: red;
+    text-shadow: #111111 1px 1px 1px;
+    font-size: 1.3rem;
+}
+.imHungry:after {
+    content: 'I`m hungry, feed me';
+    position: absolute;
+    top: 100px;
+    right: 175px;
+    color: red;
+    text-shadow: #111111 1px 1px 1px;
+    font-size: 1.3rem;
+}
+.imageContain img {
+    padding: 5px 5px 0 5px;
+    width: 300px;
+    height: 300px;
+}
+.mainContain span {
+    padding: 5px;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+.doEat, .doSleep, .doSuperhero {
+    width: 80px;
+    height: 40px;
+    margin-top: 10px;
+}
+.doSuperhero {
+    margin-bottom: 20px;
+    transition: background-color 1s;
+}
+.doSuperhero:hover {
+    background-color: red;
+}
