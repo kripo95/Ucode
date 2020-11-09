@@ -72,10 +72,45 @@
     text-shadow: #111111 1px 1px 1px;
     font-size: 1.3rem;
 }
+
 .imageContain img {
     padding: 5px 5px 0 5px;
     width: 300px;
     height: 300px;
+}
+.cloudFly:after {
+    content: '\2601 I flyyyyyyy';
+    position: absolute;
+    text-shadow: white 1px 1px 1px;
+    top: 0;
+    right: -30px;
+    color: darkblue;
+    font-size: 3rem;
+   width: 100px;
+    height: 100px;
+    animation: fly 3s linear;
+}
+@keyframes fly {
+    from {right: -100%; opacity: 0}
+    50%{right: 0; opacity: 1}
+    to{right: 100%; opacity: 0}
+}
+.fightEvil:after{
+    content: 'Fuck you, bitch';
+    position: absolute;
+    color: red;
+    top: 0; left: 0; bottom: 0; right: 0;
+    text-shadow: white 1px 1px 1px;
+    font-size: 1rem;
+    animation: fight 1s linear;
+    overflow: hidden;
+}
+@keyframes fight {
+    from{font-size: 2rem}
+    25%{font-size: 3rem}
+    50%{font-size: 4rem}
+    75%{font-size: 5rem}
+    to{font-size: 6rem}
 }
 .mainContain span {
     padding: 5px;

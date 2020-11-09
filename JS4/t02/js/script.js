@@ -23,13 +23,13 @@ class Human {
         if (!this.act){
             imageContain.classList.add('imEat');
             this.act = true;
-            this.time = setTimeout(eats.bind(this), 10000);
+            setTimeout(eats.bind(this), 10000);
            if(this.calories > 500){
                imageContain.classList.add('imNotHungry');
-               this.time = setTimeout(function (){imageContain.classList.remove('imNotHungry')}, 1000);
+               setTimeout(function (){imageContain.classList.remove('imNotHungry')}, 1000);
            }else if(this.calories < 500){
                imageContain.classList.add('imStillHungry');
-               this.time = setTimeout(function (){imageContain.classList.remove('imStillHungry')}, 1000);
+               setTimeout(function (){imageContain.classList.remove('imStillHungry')}, 1000);
            }
         }else {
             console.log('wait from end act')
@@ -42,11 +42,11 @@ class Human {
 function cal(){
     if(this.calories <= 0){
         imageContain.classList.add('imHungry');
-        this.time = setTimeout(function (){imageContain.classList.remove('imHungry')}, 1000);
+        setTimeout(function (){imageContain.classList.remove('imHungry')}, 1000);
     }else if (this.calories > 0){
         this.calories -= 200;
     }
-    this.time = setTimeout(cal.bind(this), 60000);
+    setTimeout(cal.bind(this), 60000);
     caloriesSpan.innerHTML = `Calories: ${this.calories}`;
 }
 function eats(){
@@ -59,43 +59,43 @@ function sleep(){
     this.act = false;
     imageContain.classList.remove('iMsleep');
     imageContain.classList.add('imWakeUp');
-    this.time = setTimeout(function (){imageContain.classList.remove('imWakeUp')}, 3000);
+    setTimeout(function (){imageContain.classList.remove('imWakeUp')}, 3000);
 }
 
 let tony = new Human('Tony', 'Stark', 'Man', 55);
 class Superhero extends Human{
-    constructor(age, gender, nameHero,) {
-        super(age, gender);
-        this.nameHero = nameHero;
-        this.calories = 600;
-        this.act = false;
+    constructor(firstName, lastName, gender, age, superName) {
+        super(firstName, lastName, gender, age);
+        this.superName = superName;
     }
-    fly(){
-        setTimeout(flying.bind(this), 10000);
-        console.log(`${this.nameHero} flying`)
+    sleepFor() {
+        super.sleepFor();
+    }
+    feed() {
+        super.feed();
+    }
+    losesCalorier() {
+        super.losesCalorier();
+    }
+
+    fly() {
+            imageContain.classList.add('cloudFly');
+            setTimeout(function (){imageContain.classList.remove('cloudFly')}, 3000);
+    }
+    fightWithEvil(){
+        if(this.calories > 100){
+            imageContain.classList.add('fightEvil');
+            setTimeout(function (){imageContain.classList.remove('fightEvil')}, 1000);
+            this.calories -= 100;
+        }
     }
 }
-function flying(){
-    this.act = false;
-    this.calories -= 100;
-    console.log(`${this.nameHero} stop flying`)
-}
-let ironMan = new Superhero('55', 'Man', 'Iron Man');
+
+let ironMan = null;
 let createHuman = document.getElementById('createHuman');
 let mainContain = document.getElementById('mainContain');
 createHuman.addEventListener('click', function (){
-    mainContain.innerHTML = '';
-    mainContain.innerHTML = `
-    <div class="imageContain" id="imageContain"><img src="assets/images/TonyStark.jpg" alt="human"></div>
-    <span>First name: ${tony.firstName}</span>
-    <span>Last name: ${tony.lastName}</span>
-    <span>Gender: ${tony.gender}</span>
-    <span>Age: ${tony.age}</span>
-    <span id="caloriesSpan">Calories: ${tony.calories}</span>
-    <button class="doSleep" id="sleep">sleep</button>
-    <button class="doEat" id="eat">eat</button>
-    <button class="doSuperhero" id="superHero">Turn to Superhero</button>
-    `
+    render(tony);
     tony.losesCalorier();
     let sleep = document.getElementById('sleep');
     sleep.addEventListener('click', function (){
@@ -107,7 +107,47 @@ createHuman.addEventListener('click', function (){
     })
     let superHero = document.getElementById('superHero');
     superHero.addEventListener('click', function (){
-        mainContain.innerHTML = '';
-        clearTimeout(tony.time);
+        if(tony.calories > 100){
+            ironMan = new Superhero('Tony', 'Stark', 'Man', 55, 'Iron Man');
+            mainContain.innerHTML = '';
+            clearTimeout(tony.time);
+            ironMan.losesCalorier();
+            render(ironMan);
+            let sleep = document.getElementById('sleep');
+            sleep.addEventListener('click',function (){
+                ironMan.sleepFor();
+            })
+            let eat = document.getElementById('eat');
+            eat.addEventListener('click', function (){
+                ironMan.feed();
+            })
+            let flyIron = document.getElementById('fly');
+            flyIron.addEventListener('click',function (){
+                ironMan.fly();
+            })
+            let fightIron = document.getElementById('fight');
+            fightIron.addEventListener('click',function (){
+                ironMan.fightWithEvil();
+
+            })
+        }
+
     })
 });
+function render(obj){
+    mainContain.innerHTML = '';
+    mainContain.innerHTML = `
+    <div class="imageContain" id="imageContain"><img ${ironMan === null ? 'src="assets/images/TonyStark.jpg" alt="human"':'src="assets/images/ironMan.jpg" alt="ironMan"'}></div>
+    ${ironMan !== null ? '<span>Name Hero:' + ' ' + ironMan.superName + '</span>' : ''}
+    <span>First name: ${obj.firstName}</span>
+    <span>Last name: ${obj.lastName}</span>
+    <span>Gender: ${obj.gender}</span>
+    <span>Age: ${obj.age}</span>
+    <span id="caloriesSpan">Calories: ${obj.calories}</span>
+    <button class="doSleep" id="sleep">sleep</button>
+    <button class="doEat" id="eat">eat</button>
+    ${ironMan === null ? '<button class="doSuperhero" id="superHero">Turn to Superhero</button>': ''}
+    ${ironMan !== null ? '<button class="doSuperhero" id="fly">Fly</button>' : ''}
+    ${ironMan !== null ? '<button class="doSuperhero" id="fight">Fight</button>': ''}
+    `
+}
