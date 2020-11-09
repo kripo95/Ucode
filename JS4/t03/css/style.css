@@ -1,0 +1,14 @@
+.mainContain {
+    height: 100%;
+    width: 100%;
+    background-color: beige;
+    position: relative;
+}
+.block{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    transform: rotate(120deg) ;
+    background-color: red;
+
+}
