@@ -9,40 +9,46 @@ const magician = {
         console.log(Object.getPrototypeOf(this));
     }
 };
-function Creature(name, age, species){
-    this.name = name;
-    this.age = age;
-    this.species = species;
-
+class Creature{
+    constructor(name, age, species, _portrait) {
+        this.name = name;
+        this.age = age;
+        this.species = species;
+        this._portrait
+    }
+    ['say hello'](){
+        return console.log(`Hello, my name is ${this.name}`);
+    }
 }
-Creature.prototype['say hello'] = function(){
-    return console.log(`Hello, my name is ${this.name}`);
+class Human extends Creature{
+    constructor(name, age, species, _portrait ,job) {
+        super(name,age,species, _portrait);
+        this.job = job;
+    }
 }
-
-
-function Human(job, name, age, species){
-    Creature.call(this, name, age, species);
-    this.job = job;
+class Dog extends Creature{
+    constructor(name, age, species, _portrait, color) {
+        super(name, age, species, _portrait);
+        this.color = color;
+    }
 }
-Object.setPrototypeOf(Human.prototype,Creature.prototype);
-
-function Dog(color, name, age, species){
-    Creature.call(this, name, age, species);
-    this.color = color;
+class Vampire extends Human{
+    constructor(name, age, species, _portrait, job, title) {
+        super(name, age, species, _portrait ,job);
+        this.title = title;
+    }
 }
-Object.setPrototypeOf(Dog.prototype, Creature.prototype);
-
-
-function Vampire(title, job, name, age, species){
-    Human.call(this, job, name, age, species);
-    this.title = title;
+class Werewolf extends Human{
+    constructor(name, age, species, _portrait ,job, _isWolf) {
+        super(name, age, species, _portrait ,job);
+        this._isWolf = false;
+    }
 }
-Object.setPrototypeOf(Vampire.prototype, Human.prototype);
-
 let id = document.getElementById('head');
-let human = new Human("FrontEND", 'Tolik', '25', 'human');
-let dog = new Dog('white', 'Gabbi', '8', 'dog');
-let vampire = new Vampire('count','darkside','Hasik', '21314','vampire');
+let human = new Human('Sveta', 25, 'human', './assets/images/magician.png', 'FrontEnd');
+let dog = new Dog("Gabbi", 8, 'dog', './assets/images/magician.png', 'white');
+let vampire = new Vampire('Hasik', '214', 'vampire','./assets/images/magician.png', 'assassin','count');
+let wolf = new Werewolf('Bufa', 11, 'wolf','./assets/images/magician.png', 'bum');
 let array = document.getElementsByClassName('protoBtn');
 let noproto = new Object();
 function changeStatus(e){
@@ -57,7 +63,7 @@ function changeStatus(e){
             properties.innerHTML = `<button onclick="magician['do magic']()">do magic</button>`
             break;
         case 'human prototype' :
-            id.src = './assets/images/human.png';
+            id.src = human._portrait;
             Object.setPrototypeOf(magician, human);
             properties.innerHTML = `<button onclick="magician['do magic']()">do magic</button>
                                     <button onclick="human['say hello']()">say hello</button>
@@ -86,6 +92,18 @@ function changeStatus(e){
                                     <div><span>Age:</span> <span class="propValue">${dog.age}</span></div>
                                     <div><span>Species:</span> <span class="propValue">${dog.species}</span></div>
                                     <div><span>Color:</span> <span class="propValue">${dog.color}</span></div>`
+            break;
+        case 'werewolf prototype':
+            id.src = './assets/images/human.png';
+            Object.setPrototypeOf(magician, wolf);
+            properties.innerHTML = `<button onclick="magician['do magic']()">do magic</button>
+                                    <button onclick="wolf['say hello']()">say hello</button>
+                                    <button>transform</button>
+                                    <div><span>Name:</span> <span class="propValue">${wolf.name}</span></div>
+                                    <div><span>Age:</span> <span class="propValue">${wolf.age}</span></div>
+                                    <div><span>Species:</span> <span class="propValue">${wolf.species}</span></div>
+                                    <div><span>Color:</span> <span class="propValue">${wolf.job}</span></div>
+            `
             break;
     }
 }
