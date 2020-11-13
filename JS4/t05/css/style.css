@@ -1,7 +1,6 @@
 .menuContain {
     margin: 0 auto;
     width: 800px;
-    height: 1400px;
     background-color: blanchedalmond;
     font-family: 'Satisfy', cursive;
     color: #333333;
@@ -10,14 +9,14 @@
 h1 {
     text-align: center;
     font-size: 4rem;
-    padding-top: 150px;
+    padding-top: 60px;
 }
 .itemNameContain{
     padding: 0 60px 60px 60px;
 }
 ul {
     padding: 0;
-    padding-top: 60px;
+    padding-top: 40px;
 }
 li {
     list-style: none;
