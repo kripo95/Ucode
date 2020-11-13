@@ -13,12 +13,10 @@ function Creature(name, age, species){
     this.name = name;
     this.age = age;
     this.species = species;
-
 }
 Creature.prototype['say hello'] = function(){
     return console.log(`Hello, my name is ${this.name}`);
 }
-
 
 function Human(job, name, age, species){
     Creature.call(this, name, age, species);
@@ -46,9 +44,7 @@ let vampire = new Vampire('count','darkside','Hasik', '21314','vampire');
 let array = document.getElementsByClassName('protoBtn');
 let noproto = new Object();
 function changeStatus(e){
-    for (let item of array){
-        item.classList.remove('active');
-    }
+   Array.from(array).map(item => item.classList.remove('active'));
     e.classList.add('active');
     switch (e.textContent){
         case 'no prototype':

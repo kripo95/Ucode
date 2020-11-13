@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1d4e939-4f5a-43b2-abf5-35d6a8efa0cb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/JS4/t04/assets/images/dog.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS4/t04/assets/images/hat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS4/t04/assets/images/human.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS4/t04/assets/images/magician.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS4/t04/assets/images/vampire.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS4/t04/assets/images/werewolf.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JS4/t00/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS4/t00/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS4/t03/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/JS4/t03/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS4/t03/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS4/t03/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JS4/t04/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS4/t04/js/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +14,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="CSS File" />
         <option value="JavaScript File" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -62,7 +55,8 @@
       <workItem from="1604849489794" duration="2447000" />
       <workItem from="1604852904692" duration="8123000" />
       <workItem from="1604933693177" duration="12777000" />
-      <workItem from="1605104804922" duration="11955000" />
+      <workItem from="1605104804922" duration="12068000" />
+      <workItem from="1605276844453" duration="15978000" />
     </task>
     <servers />
   </component>
