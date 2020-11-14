@@ -1,0 +1,196 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+    padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+    list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+    margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+
+
+
+.mainWrapper {
+    background: #333333;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+.chatForm {
+    width: 400px;
+    height: 600px;
+    position: absolute;
+    margin: auto;
+    top:0; left: 0; right: 0; bottom: 0;
+    border: 2px solid white;
+    border-radius: 15px;
+}
+.interlocutorsName {
+    width: 100%;
+    height: 50px;
+    background: crimson;
+    color: white;
+    font-size: 1.3rem;
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    align-items: center;
+}
+.interlocutorsName span {
+    padding-left: 10px;
+    letter-spacing: 3px;
+}
+
+.writeMessageContain {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+}
+.writeMessageContain input {
+    flex-basis: 90%;
+    outline: none;
+    height: 40px;
+    border-radius: 0 0 0 15px;
+    border: none;
+    padding-left: 10px;
+}
+.writeMessageContain button {
+    flex-basis: 10%;
+    height: 40px;
+    border-radius: 0 0 15px 0;
+    outline: none;
+    border: none;
+    color: red;
+    font-size: 1.5rem;
+}
+.chat {
+    width: 398px;
+    height: calc(600px - 90px);
+    background: darkgrey;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+}
+.messageContainMe{
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.messageMe {
+    padding: 10px;
+    background: crimson;
+    border-radius: 2px;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    position: relative;
+    color: white;
+}
+.messageMe:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 100%;
+    width: 10px;
+    height: 10px;
+    border-top: 7px solid transparent;
+    border-left: 7px solid crimson;
+    border-bottom: 7px solid transparent;
+}
+.messageContainJar {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+.messageJar {
+    padding: 10px;
+    background: white;
+    border-radius: 2px;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    position: relative;
+}
+.messageJar:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 100%;
+    width: 10px;
+    height: 10px;
+    border-top: 7px solid transparent;
+    border-right: 7px solid white;
+    border-bottom: 7px solid transparent;
+}
