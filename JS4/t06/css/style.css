@@ -136,10 +136,12 @@ select {
 .chat {
     width: 398px;
     height: calc(600px - 90px);
+    max-height: calc(600px - 90px);
     background: darkgrey;
     overflow-y: scroll;
     overflow-x: hidden;
-
+    display: flex;
+    flex-direction: column-reverse;
 }
 .messageContainMe{
     padding: 20px;
