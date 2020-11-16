@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1d4e939-4f5a-43b2-abf5-35d6a8efa0cb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/JS4/t07/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS4/t07/js/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS4/t06/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/JS4/t06/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS4/t06/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/JS4/t06/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS4/t06/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS4/t06/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JS4/t07/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/JS4/t07/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JS4/t07/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/JS4/t07/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JS4/t07/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS4/t07/js/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +62,8 @@
       <workItem from="1605104804922" duration="12068000" />
       <workItem from="1605276844453" duration="18267000" />
       <workItem from="1605369163885" duration="8159000" />
-      <workItem from="1605454003903" duration="9858000" />
+      <workItem from="1605454003903" duration="10183000" />
+      <workItem from="1605539877559" duration="5180000" />
     </task>
     <servers />
   </component>
