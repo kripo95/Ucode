@@ -5,33 +5,31 @@ let user = {
 };
 // Don't edit above this line
 
-// user = new Proxy(user, {
-//     set(target, p, value) {
-//         switch (p){
-//             case 'name':
-//                 break;
-//             case 'age':
-//                 if(typeof +value == 'number' && !value.startsWith('0')){
-//                     target[p] = value;
-//                     return true;
-//                 }
-//         }
-//     }
-// });
+user = new Proxy(user, {
+    set(target, p, value) {
+        switch (p){
+            case 'name':
+                if (/^[a-zA-Z]/gm.test(value)){
+                    target[p] = value.split(' ').filter(str => str !== '').map(str => str.slice(0,1).toUpperCase() + str.slice(1)).join(' ');
+                    return true;
+                }else return false;
+            case 'age':
+                if(!(/^0|(\D)/gmi.test(value))){
+                    target[p] = value.slice(0,3);
+                    return true;
+                }else return false;
+            case 'email':
+                if(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(value)){
+                    target[p] = value;
+                    return true;
+                }else return false;
+        }
+    }
+});
 function number (item){
-    if(/^0|(\D)/gmi.test(item)){
-        return item;
-    }else {
-        return false;
-    }
+   return  item.split(' ').filter(string => string !== '').map(string => string.slice(0,1).toUpperCase() + string.slice(1)).join(' ');
 }
-function string(item){
-    if(){
 
-    }else {
-
-    }
-}
 
 
 // Don't edit above this line
