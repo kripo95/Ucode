@@ -4,10 +4,9 @@
 
     let coords = elem.getBoundingClientRect();
 
-    let windowHeight = document.documentElement.clientHeight / 3;
 
-    let extendedTop = -windowHeight;
-    let extendedBottom = 2 * windowHeight;
+    let extendedTop = -1200;
+    let extendedBottom = 1200;
 
     // top visible || bottom visible
     let topVisible = coords.top > extendedTop && coords.top < extendedBottom;
@@ -25,7 +24,6 @@
     if (isVisible(img)) {
     // отключение кеширования
     // эта строка должна быть удалена в "боевом" коде
-    realSrc += '?nocache=' + Math.random();
 
     img.src = realSrc;
 
@@ -33,6 +31,14 @@
 }
 }
 }
-
     window.addEventListener('scroll', showVisible);
     showVisible();
+
+    let number = setTimeout(function elementVisible (){
+        let img = document.querySelectorAll('img');
+        let placeholder = document.querySelectorAll('.imagePlaceholder');
+        let visibleImgLength = Array.from(img).filter(item => item.dataset.src !== '').length;
+        placeholder[0].innerHTML = `<span>${img.length - visibleImgLength} images loaded from ${img.length}</span>`;
+        placeholder[0].style.backgroundColor = visibleImgLength === 0 ? 'green' : 'red';
+        number = setTimeout(elementVisible, 500);
+    }, 1000)

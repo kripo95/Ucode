@@ -1,9 +1,15 @@
-body {
+div {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: nowrap;
+    justify-content: center;
+    margin-top: 50px;
 }
-img {
-   width: 100%;
+h1 {
+    text-align: center;
+}
+.imagePlaceholder {
+    position: fixed;
+    right: 20px;
+    top: 0;
+    padding: 3px 5px 3px 5px;
+    border-radius: 5px;
 }
