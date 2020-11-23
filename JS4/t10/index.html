@@ -4,8 +4,35 @@
     <meta charset="UTF-8">
     <title>Super-stats</title>
     <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['bar']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Year', 'Sales', 'Expenses', 'Profit', 'Loh'],
+                ['2014', 1000, 400, 200, 111],
+                ['2015', 1170, 460, 250, 111],
+                ['2016', 660, 1120, 300, 111],
+                ['2017', 1030, 540, 350, 111]
+            ]);
+
+            var options = {
+                chart: {
+                    title: 'Company Performance',
+                    subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+                }
+            };
+
+            var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+            chart.draw(data, google.charts.Bar.convertOptions(options));
+        }
+    </script>
 </head>
 <body>
+<div id="columnchart_material" style="width: 800px; height: 500px;"></div>
 <h1>Super-Stats</h1>
 <div><span>Compare stats of different superhero</span></div>
 <div><span>Find superheroes to compare using search or click "Random" to select a random superhero.</span></div>

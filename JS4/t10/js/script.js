@@ -4,7 +4,7 @@ async function getDataHero(nameOrId){
     });
     const heroObject = await heroValue.json();
     console.log(heroObject);
-    searchResultBlock(heroObject.results);
+    searchResultBlock(heroObject.results||heroObject);
 }
 
 function addForCompare(){
@@ -14,7 +14,7 @@ function addForCompare(){
         item.addEventListener('click', function (){
             console.log(item.dataset);
             if (pullHero.size <= 20){
-                pullHero.add(item.dataset);
+                pullHero.add(item.dataset.id);
                 compareHero.value = `compare ${pullHero.size}`;
             } else {
                 alert('Max heroes add 20!');
@@ -22,19 +22,26 @@ function addForCompare(){
         })
     })
 }
-
-
-function searchResultBlock(items){
-    const resultBlock = document.getElementById('searchResult');
-    resultBlock.innerHTML = ` `;
-    [...items].map(item => {
-        const div = document.createElement('div');
-        div.classList.add('hero');
-        div.dataset.id = `${item.id}`;
-        div.innerHTML = `<span>${item.name}</span><span>${item.biography['full-name']}</span>`;
-        resultBlock.append(div);
-    })
+function renderResultBlock(elem){
+    const div = document.createElement('div');
+    div.classList.add('hero');
+    div.dataset.id = `${elem.id}`;
+    div.innerHTML = `<span>${elem.name}</span><span>${elem.biography['full-name']}</span>`;
+    return div;
 }
+function searchResultBlock(items){
+     const resultBlock = document.getElementById('searchResult');
+    resultBlock.innerHTML = ` `;
+    console.log(items.size);
+    if (!items.length){
+        resultBlock.append(renderResultBlock(items));
+    } else {
+        [...items].map(item => {
+            resultBlock.append(renderResultBlock(item));
+        })
+    }
+ }
+
 
 
 
@@ -67,9 +74,6 @@ randomHero.addEventListener('click', function () {
 compareHero.addEventListener('click', function () {
     alert('compare');
 })
-// for(let i = 0; i < 100; i++){
-//     console.log(Math.floor(Math.random() * 731));
-// }
 
 
 
