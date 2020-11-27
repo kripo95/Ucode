@@ -1,0 +1,55 @@
+body {
+    background-color: #404040;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+}
+div {
+    padding: 10px;
+}
+.inputBox {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+.btn {
+    padding: 5px;
+    font-size: 1.3rem;
+    background-color: darkgray;
+    border: none;
+    text-transform: uppercase;
+    margin: 0 5px 0 5px;
+}
+.btn:active {
+    box-shadow: 0 0 5px darkgrey;
+}
+.searchField {
+    width: 60%;
+    outline: none;
+    background-color: darkgray;
+}
+.searchResult {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 60%;
+}
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+.hero span {
+    padding: 5px 0 5px 0;
+    max-width: 150px;
+    text-align: center;
+}
+.heroImage {
+    width: 150px;
+    height: 180px;
+    border-radius: 10px;
+    border: 2px solid darkgray;
+}
