@@ -7,6 +7,23 @@ async function getDataHero(nameOrId){
     searchResultBlock(heroObject.results||heroObject);
 }
 
+
+async function powerStats(){
+    let requests = await Array.from(pullHero).map(heroStats => fetch(`https://superheroapi.com/api.php/2593928190897301/${heroStats}/powerstats`).then(item => item.json()));
+    let data = await Promise.all(requests);
+
+
+    let nameOfStrength = ['Super-Hero-Stats','Intelligence', 'Strength', 'Speed', 'Durability', 'Power', 'Combat'];
+    let array = data.map(item => [item.name , item.intelligence === 'null' ? 10 : +item.intelligence, item.strength === 'null' ? 10 : +item.strength, item.speed === 'null' ? 10 : +item.speed, item.durability === 'null' ? 10 : +item.durability , item.power === 'null' ? 10 : +item.power, item.combat === 'null' ? 10 : +item.combat ]);
+    array.unshift(nameOfStrength);
+    console.log(array);
+    resultBlock.innerHTML = '';
+    google.charts.load('current', {'packages':['bar']});
+    google.charts.setOnLoadCallback(drawChart);
+    drawChart(array);
+}
+
+
 function addForCompare(){
     const result = document.querySelectorAll('.hero');
     [...result].map(item => {
@@ -20,6 +37,8 @@ function addForCompare(){
         })
     })
 }
+
+
 function renderResultBlock(elem){
     const div = document.createElement('div');
     div.classList.add('hero');
@@ -27,6 +46,8 @@ function renderResultBlock(elem){
     div.innerHTML = `<img class="heroImage" src="${elem.image.url}" onerror="this.src = 'https://proprikol.ru/wp-content/uploads/2020/07/kartinki-znak-voprosa-13-650x480.jpg'"><span>${elem.name}</span><span>${elem.biography['full-name']}</span>`;
     return div;
 }
+
+
 function searchResultBlock(items){
     resultBlock.innerHTML = ` `;
     console.log(items.size);
@@ -66,20 +87,7 @@ randomHero.addEventListener('click', function () {
             addForCompare();
         })
 })
-async function powerStats(){
-    let requests = await Array.from(pullHero).map(heroStats => fetch(`https://superheroapi.com/api.php/2593928190897301/${heroStats}/powerstats`).then(item => item.json()));
-    let data = await Promise.all(requests);
 
-
-    let nameOfStrength = ['Super-Hero-Stats','Intelligence', 'Strength', 'Speed', 'Durability', 'Power', 'Combat'];
-    let array = data.map(item => [item.name , item.intelligence === 'null' ? 10 : +item.intelligence, item.strength === 'null' ? 10 : +item.strength, item.speed === 'null' ? 10 : +item.speed, item.durability === 'null' ? 10 : +item.durability , item.power === 'null' ? 10 : +item.power, item.combat === 'null' ? 10 : +item.combat ]);
-    array.unshift(nameOfStrength);
-    console.log(array);
-    resultBlock.innerHTML = '';
-    google.charts.load('current', {'packages':['bar']});
-    google.charts.setOnLoadCallback(drawChart);
-    drawChart(array);
-}
 
 compareHero.addEventListener('click', function () {
     powerStats();

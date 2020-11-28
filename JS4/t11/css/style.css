@@ -1,0 +1,35 @@
+h1 {
+    color: white;
+}
+.mapWrapper{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.map {
+    width: 600px;
+    height: 500px;
+    border: 2px solid white;
+    border-radius: 10px;
+    position: absolute;
+}
+body {
+    background-color: #404040;
+}
+#geocoder-container > div {
+    min-width: 50%;
+    margin-left: 25%;
+}
+.coordinates {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    position: absolute;
+    top: 430px;
+    left: 10px;
+    padding: 5px 10px;
+    margin: 0;
+    font-size: 11px;
+    line-height: 18px;
+    border-radius: 3px;
+    display: none;
+}

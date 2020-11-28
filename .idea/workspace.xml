@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="e1d4e939-4f5a-43b2-abf5-35d6a8efa0cb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/JS4/t11/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JS4/t11/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JS4/t11/js/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS4/t10/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/JS4/t10/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS4/t10/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/JS4/t10/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JS4/t10/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS4/t10/js/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,9 +19,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
-        <option value="CSS File" />
         <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -77,7 +81,9 @@
       <workItem from="1605973395476" duration="6232000" />
       <workItem from="1606062331262" duration="8769000" />
       <workItem from="1606402169152" duration="12912000" />
-      <workItem from="1606490597168" duration="5261000" />
+      <workItem from="1606490597168" duration="7397000" />
+      <workItem from="1606569752545" duration="1902000" />
+      <workItem from="1606577659163" duration="10100000" />
     </task>
     <servers />
   </component>
@@ -89,9 +95,13 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="429" y="505" key="#Web_Browsers/0.0.2560.1440@0.0.2560.1440" timestamp="1605984775155" />
-    <state x="304" y="331" width="670" height="676" key="search.everywhere.popup" timestamp="1605984700144">
+    <state x="448" y="429" key="RollbackChangesDialog" timestamp="1606581865577">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="304" y="331" width="670" height="676" key="search.everywhere.popup/0.0.2560.1440@0.0.2560.1440" timestamp="1605984700144" />
+    <state x="448" y="429" key="RollbackChangesDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1606581865577" />
+    <state x="304" y="331" width="670" height="676" key="search.everywhere.popup" timestamp="1606578778582">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="304" y="331" width="670" height="676" key="search.everywhere.popup/0.0.2560.1440@0.0.2560.1440" timestamp="1606578778582" />
   </component>
 </project>
