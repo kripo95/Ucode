@@ -8,10 +8,9 @@ var map = new mapboxgl.Map({
 });
 
 var marker = new mapboxgl.Marker({
-    draggable: true
-}).setLngLat([0, 0])
-    .addTo(map);
-
+    color: 'blue',
+    draggable: true,
+}).setLngLat(map.getCenter()).addTo(map);
 
 
 function onDragEnd() {
@@ -21,7 +20,7 @@ function onDragEnd() {
         'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
 }
 
-marker.on('dragend', onDragEnd);
+marker.on('touchmove', onDragEnd);
 
 
 
@@ -30,11 +29,15 @@ marker.on('dragend', onDragEnd);
 var geocoder = new MapboxGeocoder({
     accessToken: mapboxgl.accessToken,
     marker: {
-        color: 'orange'
+        color: 'blue',
+        draggable: true,
     },
     mapboxgl: mapboxgl
 });
 map.addControl(geocoder);
+map.on('movestart', function (){
+    marker.remove();
+})
 
 
 //UserLocal
@@ -47,7 +50,16 @@ var userLocal = new mapboxgl.GeolocateControl({
 })
 map.addControl(userLocal);
 
-
+userLocal.on('trackuserlocationend', function() {
+   marker = new mapboxgl.Marker({
+        draggable: true,
+       color: 'blue',
+    }).setLngLat(map.getCenter()).addTo(map);
+    marker.on('dragend', onDragEnd);
+});
+// userLocal.on('trackuserlocationstart', function() {
+//     marker.remove();
+// });
 
 
 
