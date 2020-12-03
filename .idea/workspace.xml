@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e1d4e939-4f5a-43b2-abf5-35d6a8efa0cb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS4/t11/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS4/t11/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JS4/t03/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS4/t03/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JS4/t12/hello-react-app/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/JS4/t12/hello-react-app/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JS4/t12/hello-react-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS4/t12/hello-react-app/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JS4/t12/hello-react-app/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/JS4/t12/hello-react-app/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,9 +19,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="CSS File" />
         <option value="JavaScript File" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -84,7 +87,10 @@
       <workItem from="1606592417365" duration="709000" />
       <workItem from="1606665218089" duration="3184000" />
       <workItem from="1606748088019" duration="4883000" />
-      <workItem from="1606758758888" duration="646000" />
+      <workItem from="1606758758888" duration="2450000" />
+      <workItem from="1606835144552" duration="4386000" />
+      <workItem from="1607008690272" duration="3219000" />
+      <workItem from="1607014478263" duration="4784000" />
     </task>
     <servers />
   </component>
@@ -96,6 +102,10 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="429" y="505" key="#Web_Browsers/0.0.2560.1440@0.0.2560.1440" timestamp="1605984775155" />
+    <state x="374" y="529" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606836287822">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="374" y="529" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1440@0.0.2560.1440" timestamp="1606836287822" />
     <state x="448" y="429" key="RollbackChangesDialog" timestamp="1606581865577">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>

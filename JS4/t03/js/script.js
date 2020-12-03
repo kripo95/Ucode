@@ -1,7 +1,6 @@
 color = ['red', 'yellow', 'blue', 'green', 'orange', 'purple'];
 const num1 = Math.floor(Math.random() * (5 + 1) );
 const num2 = 5 - num1;
-console.log(num1 + 'ad' + num2);
 
 let mainContain = document.getElementById('mainContain');
 document.addEventListener('DOMContentLoaded',function (){
