@@ -1,0 +1,70 @@
+.wrapperToDo {
+    background-color: #b23836 ;
+    width: 500px;
+}
+h1 {
+    text-align: center;
+    color: white;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+.inputWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.textInput {
+    border: 2px solid black;
+    border-radius: 15px;
+    outline: none;
+    padding: 5px;
+    width: 90%;
+}
+.submitInput {
+    border-radius: 50%;
+    border: none;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    background-color: #cc934d;
+    color: white;
+    outline: none;
+}
+.taskItemBlock {
+    padding: 10px 20px 10px 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: #cc934d;
+    border: 2px solid black;
+    width: calc(100% - 65px);
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.itemCheckWrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+}
+.itemCheckWrapper:last-child {
+    padding-top: 5px;
+}
+.unfulfilledTask {
+    color: black;
+}
+.fulfilledTask {
+    color: darkslateblue;
+    position: relative;
+}
+.fulfilledTask:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: darkslateblue;
+    top: 50%;
+}
+.fakeDiv {
+    padding-top: 10px;
+}
